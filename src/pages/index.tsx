@@ -7,6 +7,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       const randomImage = images[Math.floor(Math.random() * images.length)];
+      // @ts-ignore
       setImgSrc(randomImage);
     }, 200);
 
@@ -70,6 +71,7 @@ const RandomImageComponent = () => {
           {letters.map((letter, idx) => (
             <img
               key={idx}
+              // @ts-ignore
               src={getRandomImage(searchMap[letter])}
               className="h-10 object-contain"
             />
