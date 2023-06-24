@@ -7,8 +7,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       const randomImage = images[Math.floor(Math.random() * images.length)];
-      // @ts-ignore
-      setImgSrc(randomImage);
+      setImgSrc(randomImage!);
     }, 200);
 
     return () => {
@@ -60,7 +59,7 @@ const RandomImageComponent = () => {
     setLetters(cleanedInput.split(""));
   };
 
-  const getRandomImage = (images: string | any[]) => {
+  const getRandomImage = (images: string[]) => {
     return images[Math.floor(Math.random() * images.length)];
   };
 
@@ -71,8 +70,7 @@ const RandomImageComponent = () => {
           {letters.map((letter, idx) => (
             <img
               key={idx}
-              // @ts-ignore
-              src={getRandomImage(searchMap[letter])}
+              src={getRandomImage(searchMap[letter]!)}
               className="h-10 object-contain"
             />
           ))}

@@ -131,7 +131,7 @@ export const images = [
   "/images/z_7_cropped_mask.png",
 ];
 
-export const searchMap = {
+export const searchMap: { [key: string]: string[] } = {
   a: [
     "/images/a_0_cropped_mask.png",
     "/images/a_5_cropped_mask.png",
